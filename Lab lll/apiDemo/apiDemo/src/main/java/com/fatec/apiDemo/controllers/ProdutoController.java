@@ -3,6 +3,7 @@ package com.fatec.apiDemo.controllers;
 import com.fatec.apiDemo.entities.Produto;
 import com.fatec.apiDemo.services.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +21,7 @@ public class ProdutoController {
     public ResponseEntity<Produto> salvarProduto(@RequestBody Produto produto) {
 
         produtoService.salvar(produto);
-        return ResponseEntity.ok(produto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(produto);
     }
 
     @GetMapping
@@ -28,6 +29,21 @@ public class ProdutoController {
         List<Produto> produtos = produtoService.buscarTodos();
         return ResponseEntity.ok().body(produtos);
     }
+    /*
+    @GetMapping
+    public String listarProdutos(@RequestParam(value = "opcao", required = false) String opcao,
+                                 @RequestParam(value = "drop_disp", required = false) String dropDisp,
+                                 @RequestParam(value = "drop_cat", required = false) Long categoriaId,
+                                 Model model) {
+        List<Produto> produtos = produtoService.filtrarProdutos(opcao, dropDisp, categoriaId);
+        List<Categoria> categorias = produtoService.getAllCategorias();
+
+        model.addAttribute("produtos", produtos);
+        model.addAttribute("categorias", categorias);
+        model.addAttribute("opcao", opcao);
+
+        return "produtos/lista";
+    }*/
 
     @GetMapping("/{id}")
     public ResponseEntity<Produto> buscarPorId(@PathVariable Long id) {
