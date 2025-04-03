@@ -30,7 +30,10 @@ public class ProdutoController {
         return ResponseEntity.ok().body(produtos);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 6ac3cb57d1913cc621a241383e81dcf56f4252a9
 
     @GetMapping
     public List<Produto> listarProdutos(@RequestParam(value = "opcao", required = false) String opcao,
@@ -40,7 +43,10 @@ public class ProdutoController {
     }
 
 
+<<<<<<< HEAD
 >>>>>>> 53894943fd23b326ef418f3893312d3ccf5fc5fb
+=======
+>>>>>>> 6ac3cb57d1913cc621a241383e81dcf56f4252a9
     /*
     @GetMapping
     public String listarProdutos(@RequestParam(value = "opcao", required = false) String opcao,

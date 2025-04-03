@@ -2,25 +2,36 @@ package com.fatec.apiDemo.entities;
 
 import jakarta.persistence.*;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import lombok.Getter;
 import lombok.Setter;
 >>>>>>> 53894943fd23b326ef418f3893312d3ccf5fc5fb
+=======
+import lombok.Getter;
+import lombok.Setter;
+>>>>>>> 6ac3cb57d1913cc621a241383e81dcf56f4252a9
 
 import java.util.Objects;
 
 @Entity
 @Table(name = "tb_produtos")
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 @Getter
 @Setter
 >>>>>>> 53894943fd23b326ef418f3893312d3ccf5fc5fb
+=======
+@Getter
+@Setter
+>>>>>>> 6ac3cb57d1913cc621a241383e81dcf56f4252a9
 public class Produto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+<<<<<<< HEAD
 <<<<<<< HEAD
     private String nome;
     @Column(columnDefinition = "Text")
@@ -77,6 +88,8 @@ public class Produto {
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
 =======
+=======
+>>>>>>> 6ac3cb57d1913cc621a241383e81dcf56f4252a9
 
     @Column(name = "nome_prod", nullable = false)
     private String nome_prod;
@@ -102,7 +115,10 @@ public class Produto {
         this.preco = preco;
         this.disponivel = disponivel;
         this.cat_prod = cat_prod;
+<<<<<<< HEAD
 >>>>>>> 53894943fd23b326ef418f3893312d3ccf5fc5fb
+=======
+>>>>>>> 6ac3cb57d1913cc621a241383e81dcf56f4252a9
     }
 
     @Override

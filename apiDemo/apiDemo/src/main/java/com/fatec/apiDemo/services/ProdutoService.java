@@ -28,7 +28,10 @@ public class ProdutoService {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 6ac3cb57d1913cc621a241383e81dcf56f4252a9
     public List<Produto> filtrarProdutos(String opcao, String dropDisp, Long categoriaId) {
         if ("Disponível".equals(opcao)) {
             // Filtra os produtos pela disponibilidade
@@ -42,7 +45,10 @@ public class ProdutoService {
         return produtoRepository.findAll();
     }
 
+<<<<<<< HEAD
 >>>>>>> 53894943fd23b326ef418f3893312d3ccf5fc5fb
+=======
+>>>>>>> 6ac3cb57d1913cc621a241383e81dcf56f4252a9
     @Transactional
     public List<Produto> buscarTodos(){
         return produtoRepository.findAll();
@@ -57,16 +63,22 @@ public class ProdutoService {
     public Produto atualizar(Long id, Produto produto) {
         Produto prod = produtoRepository.findById(id).get();
 <<<<<<< HEAD
+<<<<<<< HEAD
         prod.setNome(produto.getNome());
         prod.setDescricao(produto.getDescricao());
         prod.setPreco(produto.getPreco());
         prod.setImgUrl(produto.getImgUrl());
 =======
+=======
+>>>>>>> 6ac3cb57d1913cc621a241383e81dcf56f4252a9
         prod.setNome_prod(produto.getNome_prod());
         prod.setDescricao(produto.getDescricao());
         prod.setPreco(produto.getPreco());
         prod.setDescricao(produto.getDescricao());
+<<<<<<< HEAD
 >>>>>>> 53894943fd23b326ef418f3893312d3ccf5fc5fb
+=======
+>>>>>>> 6ac3cb57d1913cc621a241383e81dcf56f4252a9
         produtoRepository.save(prod);
         return prod;
     }
