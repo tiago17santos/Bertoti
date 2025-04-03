@@ -21,6 +21,14 @@ verificaChecked();
 // Adiciona ouvintes de evento para mudanças nos radios buttons
 disp.addEventListener('change', verificaChecked);
 cat_prod.addEventListener('change', verificaChecked);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 6ac3cb57d1913cc621a241383e81dcf56f4252a9
+>>>>>>> d7592592d745947eec7b687d9dcbee50d40de7a3
 
 
 fetch('/produtos?opcao=algumaOpcao&drop_disp=sim')
@@ -40,3 +48,10 @@ fetch('/produtos?opcao=algumaOpcao&drop_disp=sim')
             produtosContainer.innerHTML += row;
         });
     });
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 53894943fd23b326ef418f3893312d3ccf5fc5fb
+=======
+>>>>>>> 6ac3cb57d1913cc621a241383e81dcf56f4252a9
+>>>>>>> d7592592d745947eec7b687d9dcbee50d40de7a3

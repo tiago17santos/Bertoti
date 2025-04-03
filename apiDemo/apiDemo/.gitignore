@@ -14,7 +14,11 @@ target/
 .sts4-cache
 
 ### IntelliJ IDEA ###
+<<<<<<< HEAD
 .idea/
+=======
+.idea
+>>>>>>> d7592592d745947eec7b687d9dcbee50d40de7a3
 *.iws
 *.iml
 *.ipr

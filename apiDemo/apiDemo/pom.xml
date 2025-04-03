@@ -45,11 +45,26 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 6ac3cb57d1913cc621a241383e81dcf56f4252a9
+>>>>>>> d7592592d745947eec7b687d9dcbee50d40de7a3
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
 		<dependency>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 53894943fd23b326ef418f3893312d3ccf5fc5fb
+=======
+>>>>>>> 6ac3cb57d1913cc621a241383e81dcf56f4252a9
+>>>>>>> d7592592d745947eec7b687d9dcbee50d40de7a3
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -64,6 +79,16 @@
 	<build>
 		<plugins>
 			<plugin>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+=======
+=======
+>>>>>>> 6ac3cb57d1913cc621a241383e81dcf56f4252a9
+>>>>>>> d7592592d745947eec7b687d9dcbee50d40de7a3
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
@@ -86,6 +111,13 @@
 						</exclude>
 					</excludes>
 				</configuration>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 53894943fd23b326ef418f3893312d3ccf5fc5fb
+=======
+>>>>>>> 6ac3cb57d1913cc621a241383e81dcf56f4252a9
+>>>>>>> d7592592d745947eec7b687d9dcbee50d40de7a3
 			</plugin>
 		</plugins>
 	</build>

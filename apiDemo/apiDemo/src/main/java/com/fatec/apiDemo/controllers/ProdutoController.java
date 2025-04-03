@@ -30,12 +30,16 @@ public class ProdutoController {
         return ResponseEntity.ok().body(produtos);
     }
 
+
+
+
     @GetMapping
     public List<Produto> listarProdutos(@RequestParam(value = "opcao", required = false) String opcao,
                                         @RequestParam(value = "drop_disp", required = false) String dropDisp,
                                         @RequestParam(value = "drop_cat", required = false) Long categoriaId) {
         return produtoService.filtrarProdutos(opcao, dropDisp, categoriaId);
     }
+
 
 
 

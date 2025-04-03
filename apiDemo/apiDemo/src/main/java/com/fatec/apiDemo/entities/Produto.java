@@ -1,6 +1,7 @@
 package com.fatec.apiDemo.entities;
 
 import jakarta.persistence.*;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,13 +9,17 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "tb_produtos")
+
 @Getter
 @Setter
+
 public class Produto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+
 
     @Column(name = "nome_prod", nullable = false)
     private String nome_prod;
@@ -40,6 +45,9 @@ public class Produto {
         this.preco = preco;
         this.disponivel = disponivel;
         this.cat_prod = cat_prod;
+
+
+
     }
 
     @Override
@@ -49,6 +57,7 @@ public class Produto {
         Produto produto = (Produto) o;
         return id == produto.id;
     }
+
 
 
 
