@@ -12,7 +12,7 @@
 	<artifactId>apiProdutos</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>apiProdutos</name>
-	<description>API para cadastrar produtos</description>
+	<description>API para produtos</description>
 	<url/>
 	<licenses>
 		<license/>
