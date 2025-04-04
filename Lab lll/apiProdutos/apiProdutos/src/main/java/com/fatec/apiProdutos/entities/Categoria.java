@@ -13,17 +13,17 @@ import java.util.List;
 public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
-    @Column(name="nome_cat",length=200,nullable=false)
-    private String nome_cat;
+    @Column(name="nome_cat", length = 200, nullable = false)
+    private String nomeCat;
 
-    @OneToMany
+    @OneToMany(mappedBy = "categoria") // Relacionamento bidirecional com Produto
     private List<Produto> produtos;
 
     public Categoria() {}
 
-    public Categoria( String nome) {
-        this.nome_cat = nome;
+    public Categoria(String nome) {
+        this.nomeCat = nome;
     }
 }

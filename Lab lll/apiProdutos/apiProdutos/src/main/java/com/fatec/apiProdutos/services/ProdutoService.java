@@ -17,14 +17,13 @@ public class ProdutoService {
 
     @Transactional
     public void salvar(Produto produto) {
-        Produto prod = new Produto();
 
-        prod.setNome_prod(produto.getNome_prod());
-        prod.setDescricao(produto.getDescricao());
-        prod.setPreco(produto.getPreco());
-        prod.setDescricao(produto.getDescricao());
+        produto.setNomeProd(produto.getNomeProd());
+        produto.setDescricao(produto.getDescricao());
+        produto.setPreco(produto.getPreco());
+        //prod.setDisponivel(produto.get());
 
-        produtoRepository.save(prod);
+        produtoRepository.save(produto);
     }
 
     public List<Produto> filtrarProdutos(String opcao, String dropDisp, Long categoriaId) {
@@ -34,7 +33,7 @@ public class ProdutoService {
             return produtoRepository.findByDisponivel(disponivel);
         } else if ("Categoria".equals(opcao) && categoriaId != null) {
             // Filtra os produtos pela categoria
-            return produtoRepository.findByCategoriaId(categoriaId);
+            //return produtoRepository.findByCategoriaId(categoriaId);
         }
         // Caso não haja filtro, retorna todos os produtos
         return produtoRepository.findAll();
@@ -56,10 +55,10 @@ public class ProdutoService {
         Produto prod = produtoRepository.findById(id).get();
 
 
-        prod.setNome_prod(produto.getNome_prod());
+        prod.setNomeProd(produto.getNomeProd());
         prod.setDescricao(produto.getDescricao());
         prod.setPreco(produto.getPreco());
-        prod.setDescricao(produto.getDescricao());
+        //prod.setDisponivel(produto.get());
         produtoRepository.save(prod);
         return prod;
     }

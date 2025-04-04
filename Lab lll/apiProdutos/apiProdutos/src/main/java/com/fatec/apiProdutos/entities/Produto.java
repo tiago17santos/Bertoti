@@ -8,8 +8,6 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "tb_produtos")
-@Getter
-@Setter
 public class Produto {
 
     @Id
@@ -17,30 +15,29 @@ public class Produto {
     private long id;
 
     @Column(name = "nome_prod", nullable = false)
-    private String nome_prod;
+    private String nomeProd;
 
-    @Column(columnDefinition = "Text", nullable = false)
+    @Column(name = "descricao", columnDefinition = "Text", nullable = false)
     private String descricao;
 
     @Column(name = "preco", nullable = false)
     private double preco;
 
-    @Column(name = "disponivel")
+    @Column(name = "disponivel" , nullable = false)
     private boolean disponivel;
 
     @ManyToOne
-    @JoinColumn(name = "categoria_id")
-    private Categoria categoriaId;
+    @JoinColumn(name = "categoria_id", nullable = false)
+    private Categoria categoria;
 
     public Produto() {
     }
 
-    public Produto(String nome_prod, String descricao, double preco, boolean disponivel, Categoria categoriaId) {
-        this.nome_prod = nome_prod;
+    public Produto(String nomeProd, String descricao, double preco, boolean disponivel) {
+        this.nomeProd = nomeProd;
         this.descricao = descricao;
         this.preco = preco;
         this.disponivel = disponivel;
-        this.categoriaId = categoriaId;
 
     }
 
@@ -52,12 +49,12 @@ public class Produto {
         this.id = id;
     }
 
-    public String getNome_prod() {
-        return nome_prod;
+    public String getNomeProd() {
+        return nomeProd;
     }
 
-    public void setNome_prod(String nome_prod) {
-        this.nome_prod = nome_prod;
+    public void setNomeProd(String nomeProd) {
+        this.nomeProd = nomeProd;
     }
 
     public String getDescricao() {
