@@ -8,8 +8,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "tb_categoria")
-@Getter
-@Setter
 public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +21,30 @@ public class Categoria {
 
     public Categoria() {}
 
-    public Categoria(String nome) {
-        this.nomeCat = nome;
+    public Categoria( String nomeCat) {
+        this.nomeCat = nomeCat;
     }
+
+    // Getters e Setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNomeCat() {
+        return nomeCat;
+    }
+
+    public void setNomeCat(String nomeCat) {
+        this.nomeCat = nomeCat;
+    }
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+
 }

@@ -33,12 +33,12 @@ public class Produto {
     public Produto() {
     }
 
-    public Produto(String nomeProd, String descricao, double preco, boolean disponivel) {
+    public Produto(String nomeProd, String descricao, double preco, boolean disponivel, Categoria categoria) {
         this.nomeProd = nomeProd;
         this.descricao = descricao;
         this.preco = preco;
         this.disponivel = disponivel;
-
+        this.categoria = categoria;
     }
 
     public long getId() {
@@ -81,6 +81,10 @@ public class Produto {
         this.disponivel = disponivel;
     }
 
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
 
     @Override
     public boolean equals(Object o) {

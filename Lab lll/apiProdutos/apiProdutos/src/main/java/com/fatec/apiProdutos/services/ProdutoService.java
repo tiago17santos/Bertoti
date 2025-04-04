@@ -21,7 +21,7 @@ public class ProdutoService {
         produto.setNomeProd(produto.getNomeProd());
         produto.setDescricao(produto.getDescricao());
         produto.setPreco(produto.getPreco());
-        //prod.setDisponivel(produto.get());
+        produto.setDisponivel(produto.isDisponivel());
 
         produtoRepository.save(produto);
     }
@@ -58,7 +58,7 @@ public class ProdutoService {
         prod.setNomeProd(produto.getNomeProd());
         prod.setDescricao(produto.getDescricao());
         prod.setPreco(produto.getPreco());
-        //prod.setDisponivel(produto.get());
+        prod.setDisponivel(produto.isDisponivel());
         produtoRepository.save(prod);
         return prod;
     }

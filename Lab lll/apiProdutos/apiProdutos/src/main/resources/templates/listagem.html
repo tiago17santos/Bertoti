@@ -79,33 +79,19 @@
             </thead>
             <tbody>
             <!-- Itera sobre os produtos -->
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <tr th:each="produto : ${listagem}">
-=======
+
             <tr th:each="listagem : ${listagem}">
->>>>>>> 53894943fd23b326ef418f3893312d3ccf5fc5fb
-=======
-            <tr th:each="listagem : ${listagem}">
->>>>>>> 6ac3cb57d1913cc621a241383e81dcf56f4252a9
+
                 <td th:text="${listagem.nome_prod}"></td>
                 <td th:text="${listagem.valor}"></td>
                 <td>
                     <span th:text="${listagem.disp == 1 ? 'Sim' : 'Não'}"></span>
                 </td>
                 <td th:text="${listagem.cat_prod.nome}"></td>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                 <td><a th:href="@{/listagem/editar/{id}(id=${produto.id})}" class="btn btn-warning">Editar</a></td>
                 <td><a th:href="@{/listagem/excluir/{id}(id=${produto.id})}" class="btn btn-danger">Excluir</a></td>
-=======
-                <td><a th:href="@{/listagem/editar/{id}(id=${listagem.id})}" class="btn btn-warning">Editar</a></td>
-                <td><a th:href="@{/listagem/excluir/{id}(id=${listagem.id})}" class="btn btn-danger">Excluir</a></td>
->>>>>>> 53894943fd23b326ef418f3893312d3ccf5fc5fb
-=======
-                <td><a th:href="@{/listagem/editar/{id}(id=${listagem.id})}" class="btn btn-warning">Editar</a></td>
-                <td><a th:href="@{/listagem/excluir/{id}(id=${listagem.id})}" class="btn btn-danger">Excluir</a></td>
->>>>>>> 6ac3cb57d1913cc621a241383e81dcf56f4252a9
+
             </tr>
             </tbody>
         </table>
