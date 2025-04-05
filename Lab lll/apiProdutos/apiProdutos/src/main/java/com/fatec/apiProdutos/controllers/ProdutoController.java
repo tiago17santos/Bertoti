@@ -1,5 +1,6 @@
 package com.fatec.apiProdutos.controllers;
 
+import com.fatec.apiProdutos.entities.FiltroOpcao;
 import com.fatec.apiProdutos.entities.Produto;
 import com.fatec.apiProdutos.services.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,22 +25,22 @@ public class ProdutoController {
         return ResponseEntity.status(HttpStatus.CREATED).body(produto);
     }
 
-    @GetMapping
+    @GetMapping("/todos")
     public ResponseEntity<List<Produto>> listar() {
         List<Produto> produtos = produtoService.buscarTodos();
         return ResponseEntity.ok().body(produtos);
     }
 
 
-    /*@GetMapping
-    public List<Produto> listarProdutos(@RequestParam(value = "opcao", required = false) String opcao,
+    @GetMapping
+    public List<Produto> listarProdutos(@RequestParam(value = "opcao", required = false) FiltroOpcao opcao,
                                         @RequestParam(value = "drop_disp", required = false) String dropDisp,
                                         @RequestParam(value = "drop_cat", required = false) Long categoriaId) {
         return produtoService.filtrarProdutos(opcao, dropDisp, categoriaId);
     }
 
 
-    @GetMapping
+    /*@GetMapping
     public String listarProdutos(@RequestParam(value = "opcao", required = false) String opcao,
                                  @RequestParam(value = "drop_disp", required = false) String dropDisp,
                                  @RequestParam(value = "drop_cat", required = false) Long categoriaId,

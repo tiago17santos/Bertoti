@@ -1,5 +1,6 @@
 package com.fatec.apiProdutos.services;
 
+import com.fatec.apiProdutos.entities.FiltroOpcao;
 import com.fatec.apiProdutos.entities.Produto;
 import com.fatec.apiProdutos.repositories.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,16 +27,17 @@ public class ProdutoService {
         produtoRepository.save(produto);
     }
 
-    public List<Produto> filtrarProdutos(String opcao, String dropDisp, Long categoriaId) {
-        if ("Disponível".equals(opcao)) {
-            // Filtra os produtos pela disponibilidade
-            boolean disponivel = "sim".equals(dropDisp);
-            return produtoRepository.findByDisponivel(disponivel);
-        } else if ("Categoria".equals(opcao) && categoriaId != null) {
-            // Filtra os produtos pela categoria
-            //return produtoRepository.findByCategoriaId(categoriaId);
+    public List<Produto> filtrarProdutos(FiltroOpcao opcao, String dropDisp, Long categoriaId) {
+        switch (opcao) {
+            case Disponivel:
+                boolean disponivel = "sim".equals(dropDisp);
+                return produtoRepository.findByDisponivel(disponivel);
+            case Categoria:
+                if (categoriaId != null) {
+                    return produtoRepository.findCategoriaById(categoriaId);
+                }
+                break;
         }
-        // Caso não haja filtro, retorna todos os produtos
         return produtoRepository.findAll();
     }
 
