@@ -1,5 +1,6 @@
 package com.fatec.apiProdutos.controllers;
 
+import com.fatec.apiProdutos.Dto.CategoriaDto;
 import com.fatec.apiProdutos.entities.Categoria;
 import com.fatec.apiProdutos.services.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +22,8 @@ public class CategoriaController {
     }
 
     @GetMapping
-    public List<Categoria> listarCategorias() {
-        List<Categoria> cat = categoriaService.listarTodas();
+    public List<CategoriaDto> listarCategorias() {
+        List<CategoriaDto> cat = categoriaService.listarTodas();
         return cat;
     }
 }

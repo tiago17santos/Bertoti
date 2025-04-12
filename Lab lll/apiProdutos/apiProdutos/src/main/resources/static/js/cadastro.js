@@ -1,17 +1,29 @@
 // Função para carregar categorias
 async function loadCategories() {
+
     try {
-        const response = await fetch('http://localhost:8080/cadastro'); // A URL da sua API para categorias
-        const categorias = await response.json();
         const selectElement = document.getElementById('catProd');
+        selectElement.innerHTML = '<option>Carregando...</option>';
+        const response = await fetch('http://localhost:8080/categorias'); // A URL da sua API para categorias
+
+        if (!response.ok) {
+            throw new Error(`Erro ao carregar categorias: ${response.status}`);
+        }
+
+
+        const categorias = await response.json();
+
+        selectElement.innerHTML = '';
         categorias.forEach(categoria => {
             const option = document.createElement('option');
             option.value = categoria.id;
-            option.textContent = categoria.nome;
+            option.textContent = categoria.nomeCat;
             selectElement.appendChild(option);
         });
     } catch (error) {
         console.error('Erro ao carregar categorias:', error);
+        document.getElementById('errorMessage').style.display = 'block';
+        document.getElementById('errorText').textContent = 'Erro ao carregar categorias. Tente novamente.';
     }
 }
 
@@ -29,14 +41,14 @@ async function handleSubmit(event) {
     };
 
     try {
-        const response = await fetch('/api/produtos', { // A URL da sua API para criar um produto
+        const response = await fetch('http://localhost:8080/produtos', { // A URL da sua API para criar um produto
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(productData)
         });
-
+        console.log(response)
         if (!response.ok) {
             throw new Error('Erro ao cadastrar produto');
         }

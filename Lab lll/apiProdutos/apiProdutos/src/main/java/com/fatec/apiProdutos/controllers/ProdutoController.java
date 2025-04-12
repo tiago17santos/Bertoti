@@ -1,5 +1,6 @@
 package com.fatec.apiProdutos.controllers;
 
+import com.fatec.apiProdutos.Dto.ProdutoDto;
 import com.fatec.apiProdutos.entities.FiltroOpcao;
 import com.fatec.apiProdutos.entities.Produto;
 import com.fatec.apiProdutos.services.ProdutoService;
@@ -19,9 +20,9 @@ public class ProdutoController {
     private ProdutoService produtoService;
 
     @PostMapping
-    public ResponseEntity<Produto> salvarProduto(@RequestBody Produto produto) {
+    public ResponseEntity<ProdutoDto> salvarProduto(@RequestBody ProdutoDto produto) {
 
-        produtoService.salvar(produto);
+        produto = produtoService.salvar(produto);
         return ResponseEntity.status(HttpStatus.CREATED).body(produto);
     }
 

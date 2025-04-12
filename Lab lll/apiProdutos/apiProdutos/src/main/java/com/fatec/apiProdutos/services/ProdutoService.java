@@ -1,5 +1,6 @@
 package com.fatec.apiProdutos.services;
 
+import com.fatec.apiProdutos.Dto.ProdutoDto;
 import com.fatec.apiProdutos.entities.FiltroOpcao;
 import com.fatec.apiProdutos.entities.Produto;
 import com.fatec.apiProdutos.repositories.ProdutoRepository;
@@ -17,14 +18,18 @@ public class ProdutoService {
     ProdutoRepository produtoRepository;
 
     @Transactional
-    public void salvar(Produto produto) {
+    public ProdutoDto salvar(ProdutoDto produto) {
+        Produto prod = new Produto();
 
-        produto.setNomeProd(produto.getNomeProd());
-        produto.setDescricao(produto.getDescricao());
-        produto.setPreco(produto.getPreco());
-        produto.setDisponivel(produto.isDisponivel());
+        prod.setNomeProd(produto.nome());
+        prod.setDescricao(produto.descricao());
+        prod.setPreco(produto.preco());
+        prod.setDisponivel(produto.disponivel());
 
-        produtoRepository.save(produto);
+
+        prod = produtoRepository.save(prod);
+
+        return converteEmDto(prod);
     }
 
     public List<Produto> filtrarProdutos(FiltroOpcao opcao, String dropDisp, Long categoriaId) {
@@ -71,4 +76,14 @@ public class ProdutoService {
     }
 
 
+    private ProdutoDto converteEmDto(Produto produto){
+        return new ProdutoDto(
+                produto.getId(),
+                produto.getNomeProd(),
+                produto.getDescricao(),
+                produto.getPreco(),
+                produto.isDisponivel(),
+                produto.getCategoria().getId()
+        );
+    }
 }

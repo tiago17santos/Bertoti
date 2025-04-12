@@ -10,7 +10,7 @@ async function handleSubmit(event) {
 
     try {
         // Envia os dados via POST para a API do Spring Boot
-        const response = await fetch('/api/categorias', { // A URL da sua API para criar uma categoria
+        const response = await fetch('/categorias', { // A URL da sua API para criar uma categoria
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
