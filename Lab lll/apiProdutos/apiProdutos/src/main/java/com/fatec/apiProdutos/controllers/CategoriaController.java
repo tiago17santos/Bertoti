@@ -16,7 +16,7 @@ public class CategoriaController {
     private CategoriaService categoriaService;
 
     @PostMapping
-    public Categoria cadastrarCategoria(@RequestBody Categoria categoria) {
+    public CategoriaDto cadastrarCategoria(@RequestBody CategoriaDto categoria) {
         categoria = categoriaService.salvar(categoria);
         return categoria;
     }

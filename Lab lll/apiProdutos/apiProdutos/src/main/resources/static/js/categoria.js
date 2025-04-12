@@ -5,7 +5,7 @@ async function handleSubmit(event) {
     const formData = new FormData(document.getElementById('categoryForm'));
 
     const categoryData = {
-        nome: formData.get('nome')
+        nomeCat: formData.get('nome')
     };
 
     try {
@@ -17,13 +17,13 @@ async function handleSubmit(event) {
             },
             body: JSON.stringify(categoryData)
         });
-
+        console.log(JSON.stringify(categoryData))
         if (!response.ok) {
             throw new Error('Erro ao cadastrar categoria');
         }
 
         alert('Categoria cadastrada com sucesso!');
-        window.location.href = '/categorias'; // Redireciona para a lista de categorias
+        window.location.href = '/categoria'; // Redireciona para a lista de categorias
     } catch (error) {
         console.error('Erro:', error);
         document.getElementById('errorMessage').style.display = 'block';

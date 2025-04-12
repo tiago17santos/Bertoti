@@ -17,9 +17,11 @@ public class CategoriaService {
     private CategoriaRepository categoriaRepository;
 
     @Transactional
-    public Categoria salvar(Categoria categoria) {
-        categoria.setNomeCat(categoria.getNomeCat());
-        return categoriaRepository.save(categoria);
+    public CategoriaDto salvar(CategoriaDto categoria) {
+        Categoria cat = new Categoria();
+        cat.setNomeCat(categoria.nomeCat());
+        cat = categoriaRepository.save(cat);
+        return converteEmDto(cat);
     }
 
     @Transactional
