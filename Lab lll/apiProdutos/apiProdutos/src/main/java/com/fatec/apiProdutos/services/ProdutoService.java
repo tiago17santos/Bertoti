@@ -1,15 +1,19 @@
 package com.fatec.apiProdutos.services;
 
 import com.fatec.apiProdutos.Dto.ProdutoDto;
+import com.fatec.apiProdutos.entities.Categoria;
 import com.fatec.apiProdutos.entities.FiltroOpcao;
 import com.fatec.apiProdutos.entities.Produto;
+import com.fatec.apiProdutos.repositories.CategoriaRepository;
 import com.fatec.apiProdutos.repositories.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ProdutoService {
@@ -17,14 +21,25 @@ public class ProdutoService {
     @Autowired
     ProdutoRepository produtoRepository;
 
+    @Autowired
+    CategoriaRepository categoriaRepository;
+
     @Transactional
     public ProdutoDto salvar(ProdutoDto produto) {
         Produto prod = new Produto();
+
 
         prod.setNomeProd(produto.nome());
         prod.setDescricao(produto.descricao());
         prod.setPreco(produto.preco());
         prod.setDisponivel(produto.disponivel());
+
+        if (produto.categoriaId() == null) {
+            throw new NoSuchElementException("Id nulo");
+        }
+        Categoria cat = new Categoria();
+        cat.setId(produto.categoriaId());
+        prod.setCategoria(cat);
 
 
         prod = produtoRepository.save(prod);
@@ -48,13 +63,15 @@ public class ProdutoService {
 
 
     @Transactional
-    public List<Produto> buscarTodos(){
-        return produtoRepository.findAll();
+    public List<ProdutoDto> buscarTodos(){
+        List<Produto> prod = produtoRepository.findAll();
+        return prod.stream().map(this::converteEmDto).collect(Collectors.toList());
     }
 
     @Transactional
-    public Optional<Produto> buscarPorId(Long id) {
-        return produtoRepository.findById(id);
+    public ProdutoDto buscarPorId(Long id) {
+        Produto produto = produtoRepository.findById(id).orElse(null);
+        return converteEmDto(produto);
     }
 
     @Transactional

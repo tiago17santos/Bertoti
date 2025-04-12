@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,15 +21,23 @@ public class ProdutoController {
     private ProdutoService produtoService;
 
     @PostMapping
-    public ResponseEntity<ProdutoDto> salvarProduto(@RequestBody ProdutoDto produto) {
+    public ResponseEntity<?> salvarProduto(@RequestBody ProdutoDto produto) {
+        try {
+            if(produto.categoriaId() == null){
+                return ResponseEntity.notFound().build();
+            }
+            produto = produtoService.salvar(produto);
+            return ResponseEntity.status(HttpStatus.CREATED).body(produto);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(Collections.singletonMap("error", "Erro ao criar produto: " + e.getMessage()));
+        }
 
-        produto = produtoService.salvar(produto);
-        return ResponseEntity.status(HttpStatus.CREATED).body(produto);
     }
 
     @GetMapping("/todos")
-    public ResponseEntity<List<Produto>> listar() {
-        List<Produto> produtos = produtoService.buscarTodos();
+    public ResponseEntity<List<ProdutoDto>> listar() {
+        List<ProdutoDto> produtos = produtoService.buscarTodos();
         return ResponseEntity.ok().body(produtos);
     }
 
@@ -57,9 +66,9 @@ public class ProdutoController {
     }*/
 
     @GetMapping("/{id}")
-    public ResponseEntity<Produto> buscarPorId(@PathVariable Long id) {
-        Optional<Produto> produto = produtoService.buscarPorId(id);
-        return produto.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    public ResponseEntity<ProdutoDto> buscarPorId(@PathVariable Long id) {
+        ProdutoDto produto = produtoService.buscarPorId(id);
+        return ResponseEntity.ok().body(produto);
     }
 
     @PutMapping("/{id}")

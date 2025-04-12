@@ -33,11 +33,11 @@ async function handleSubmit(event) {
     const formData = new FormData(document.getElementById('productForm'));
 
     const productData = {
-        nomeProd: formData.get('nomeProd'),
-        descProd: formData.get('descProd'),
-        valorProd: formData.get('valorProd'),
-        disp: formData.get('disp'),
-        catProd: formData.get('catProd')
+        nome: formData.get('nomeProd'),
+        descricao: formData.get('descProd'),
+        preco: formData.get('valorProd'),
+        disponivel: formData.get('disp'),
+        categoriaId: formData.get('catProd')
     };
 
     try {
@@ -48,13 +48,13 @@ async function handleSubmit(event) {
             },
             body: JSON.stringify(productData)
         });
-        console.log(response)
+
         if (!response.ok) {
             throw new Error('Erro ao cadastrar produto');
         }
 
         alert('Produto cadastrado com sucesso!');
-        window.location.href = '/produtos'; // Redireciona para a lista de produtos
+        window.location.href = '/cadastro'; // Redireciona para a lista de produtos
     } catch (error) {
         console.error('Erro:', error);
         document.getElementById('errorMessage').style.display = 'block';
