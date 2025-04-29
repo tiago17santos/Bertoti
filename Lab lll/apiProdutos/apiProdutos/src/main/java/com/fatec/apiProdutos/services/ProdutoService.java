@@ -41,25 +41,42 @@ public class ProdutoService {
         cat.setId(produto.categoriaId());
         prod.setCategoria(cat);
 
-
         prod = produtoRepository.save(prod);
 
         return converteEmDto(prod);
     }
 
-    public List<Produto> filtrarProdutos(FiltroOpcao opcao, String dropDisp, Long categoriaId) {
-        switch (opcao) {
-            case Disponivel:
-                boolean disponivel = "sim".equals(dropDisp);
-                return produtoRepository.findByDisponivel(disponivel);
-            case Categoria:
-                if (categoriaId != null) {
-                    return produtoRepository.findCategoriaById(categoriaId);
-                }
-                break;
+    public List<ProdutoDto> filtrarProdutos(FiltroOpcao opcao, String dropDisp, Long categoriaId) {
+        List<Produto> produtos;
+
+        if (opcao != null) {
+            switch (opcao) {
+                case Disponivel:
+                    boolean disponivel = "sim".equalsIgnoreCase(dropDisp);
+                    produtos = produtoRepository.findByDisponivel(disponivel);
+                    break;
+                case Categoria:
+                    if (categoriaId != null) {
+                        produtos = produtoRepository.findCategoriaById(categoriaId);
+                    } else {
+                        produtos = produtoRepository.findAll(); // Se categoriaId for nulo, retorna todos
+                    }
+                    break;
+                default:
+                    produtos = produtoRepository.findAll();
+                    break;
+            }
+        } else {
+            produtos = produtoRepository.findAll();
         }
-        return produtoRepository.findAll();
+        for (Produto produto : produtos) {
+            System.out.println(produto);
+        }
+        return produtos.stream()
+                .map(this::converteEmDto)
+                .collect(Collectors.toList());
     }
+
 
 
     @Transactional

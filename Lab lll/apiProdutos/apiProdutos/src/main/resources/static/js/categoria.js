@@ -17,7 +17,7 @@ async function handleSubmit(event) {
             },
             body: JSON.stringify(categoryData)
         });
-        console.log(JSON.stringify(categoryData))
+
         if (!response.ok) {
             throw new Error('Erro ao cadastrar categoria');
         }
