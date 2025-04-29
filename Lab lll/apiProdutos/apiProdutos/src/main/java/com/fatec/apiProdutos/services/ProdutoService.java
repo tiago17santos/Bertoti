@@ -49,11 +49,13 @@ public class ProdutoService {
     public List<ProdutoDto> filtrarProdutos(FiltroOpcao opcao, String dropDisp, Long categoriaId) {
         List<Produto> produtos;
 
+
         if (opcao != null) {
             switch (opcao) {
                 case Disponivel:
                     boolean disponivel = "sim".equalsIgnoreCase(dropDisp);
                     produtos = produtoRepository.findByDisponivel(disponivel);
+                    System.out.println(dropDisp);
                     break;
                 case Categoria:
                     if (categoriaId != null) {
@@ -69,9 +71,7 @@ public class ProdutoService {
         } else {
             produtos = produtoRepository.findAll();
         }
-        for (Produto produto : produtos) {
-            System.out.println(produto);
-        }
+
         return produtos.stream()
                 .map(this::converteEmDto)
                 .collect(Collectors.toList());

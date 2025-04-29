@@ -4,30 +4,10 @@ const drop_disp = document.getElementById('drop_disp');
 const drop_cat = document.getElementById('drop_cat');
 const opcao = document.querySelector('input[name="opcao"]:checked');
 
-// Função para controlar o estado dos elementos de filtro
-function verificaChecked() {
-    if (disp.checked) {
-        drop_disp.disabled = false;
-        drop_cat.disabled = true;
-    } else if (cat_prod.checked) {
-        drop_disp.disabled = true;
-        drop_cat.disabled = false;
-    } else {
-        drop_disp.disabled = true;
-        drop_cat.disabled = true;
-    }
-}
-
-
-// Adiciona ouvintes de evento para mudanças nos radios buttons
-disp.addEventListener('change', verificaChecked);
-cat_prod.addEventListener('change', verificaChecked);
-
 window.onload = function() {
     carregarProdutos();
-    verificaChecked();
+    carregarCategorias();
 }
-
 
 // Função para carregar produtos filtrados
 function carregarProdutos() {
@@ -70,9 +50,31 @@ function carregarProdutos() {
         });
 }
 
+function carregarCategorias() {
+    fetch('/categorias')
+        .then(response => response.json())
+        .then(data => {
+            const dropCat = document.getElementById('drop_cat');
+            dropCat.innerHTML = '<option value="">Selecione</option>'; // limpa e adiciona o primeiro
+
+            data.forEach(categoria => {
+                const option = document.createElement('option');
+                option.value = categoria.id;
+                option.text = categoria.nomeCat;
+                dropCat.appendChild(option);
+            });
+        })
+        .catch(error => {
+            console.error('Erro ao carregar categorias:', error);
+        });
+}
+
+
 
 
 // Botão de filtrar
 document.getElementById('btn-filtrar').addEventListener('click', function() {
     carregarProdutos();
+    carregarCategorias();
 });
+

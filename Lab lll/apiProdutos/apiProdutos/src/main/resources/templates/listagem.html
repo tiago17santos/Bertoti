@@ -36,7 +36,7 @@
                         <input type="radio" name="opcao" value="Disponivel" id="disp" />
                         <label for="disp">Disponível</label><br>
 
-                        <select name="drop_disp" id="drop_disp" disabled>
+                        <select name="drop_disp" id="drop_disp">
                             <option value="sim">Sim</option>
                             <option value="nao">Não</option>
                         </select>
@@ -47,12 +47,9 @@
                         <input type="radio" name="opcao" value="Categoria" id="cat_prod" />
                         <label for="cat_prod">Categoria</label><br>
 
-                        <select name="drop_cat" id="drop_cat" disabled>
+                        <select name="drop_cat" id="drop_cat">
                             <option value="">Selecione</option>
-                            <option th:each="categoria : ${categorias}"
-                                    th:value="${categoria.id}"
-                                    th:text="${categoria.nomeCat}">
-                            </option>
+
                         </select>
                     </div>
                 </div>
