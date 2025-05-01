@@ -2,6 +2,7 @@ package com.fatec.apiProdutos.controllers;
 
 import com.fatec.apiProdutos.Dto.CategoriaDto;
 import com.fatec.apiProdutos.Dto.ProdutoDto;
+import com.fatec.apiProdutos.Dto.ProdutoListagemDto;
 import com.fatec.apiProdutos.entities.FiltroOpcao;
 import com.fatec.apiProdutos.entities.Produto;
 import com.fatec.apiProdutos.services.CategoriaService;
@@ -58,7 +59,7 @@ public class ProdutoController {
                                         @RequestParam(value = "drop_cat", required = false) Long categoriaId,
                                         Model model) {
 
-        List<ProdutoDto> produtos = produtoService.filtrarProdutos(opcao, dropDisp, categoriaId);
+        List<ProdutoListagemDto> produtos = produtoService.filtrarProdutos(opcao, dropDisp, categoriaId);
         System.out.println("Tamanho da lista de produtos: " + produtos.size());
         List<CategoriaDto> categorias = categoriaService.listarTodas();
 
@@ -73,13 +74,13 @@ public class ProdutoController {
     }
 
     @GetMapping("/filtrar")
-    public ResponseEntity<List<ProdutoDto>> filtrarProdutos(
+    public ResponseEntity<List<ProdutoListagemDto>> filtrarProdutos(
             @RequestParam(value = "opcao", required = false) FiltroOpcao opcao,
             @RequestParam(value = "drop_disp", required = false) String dropDisp,
             @RequestParam(value = "drop_cat", required = false) Long categoriaId) {
 
-        List<ProdutoDto> produtos = produtoService.filtrarProdutos(opcao, dropDisp, categoriaId);
-        for (ProdutoDto produto : produtos) {
+        List<ProdutoListagemDto> produtos = produtoService.filtrarProdutos(opcao, dropDisp, categoriaId);
+        for (ProdutoListagemDto produto : produtos) {
             System.out.println(produto);
         }
         return ResponseEntity.ok().body(produtos);
@@ -91,9 +92,9 @@ public class ProdutoController {
         return ResponseEntity.ok().body(produto);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Produto> atualizarProduto(@PathVariable Long id, @RequestBody Produto produto) {
-        Produto produtoAtual = produtoService.atualizar(id, produto);
+    @PutMapping("/editar_prod/{id}")
+    public ResponseEntity<ProdutoDto> editarProduto(@PathVariable Long id, @RequestBody Produto produto) {
+        ProdutoDto produtoAtual = produtoService.atualizar(id, produto);
         return ResponseEntity.ok().body(produtoAtual);
     }
 

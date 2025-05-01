@@ -1,33 +1,44 @@
-// Função para tratar o envio do formulário via JavaScript (opcional)
-document.getElementById('editProductForm').addEventListener('submit', async function (event) {
-    event.preventDefault(); // Impede o envio tradicional
-
-    const formData = new FormData(this);
-    const productData = {
-        nomeProd: formData.get('nomeProd'),
-        descProd: formData.get('descProd'),
-        valorProd: formData.get('valorProd'),
-        disp: formData.get('disp'),
-        catProd: formData.get('catProd')
-    };
+document.addEventListener('DOMContentLoaded', async function () {
+    const id = window.location.pathname.split("/").pop();
 
     try {
-        const response = await fetch('/api/produtos/{{produto.id}}', {
-            method: 'PUT', // Usando PUT para atualização
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(productData)
+        const response = await fetch(`http://localhost:8080/produtos/${id}`);
+        if (!response.ok) {
+            throw new Error("Erro ao buscar produto.");
+        }
+
+        const produto = await response.json();
+
+        // Preenche os campos
+        document.getElementById('nomeProduto').value = produto.nome;
+        document.getElementById('descricaoProduto').value = produto.descricao;
+        document.getElementById('valorProduto').value = produto.preco;
+
+        // Seleciona radio button de disponibilidade
+        if (produto.disponivel) {
+            document.getElementById('sim').checked = true;
+        } else {
+            document.getElementById('nao').checked = true;
+        }
+
+        // Preenche o select da categoria (você pode carregar as categorias dinamicamente também)
+        const select = document.getElementById('catProd');
+        const categorias = await fetch('http://localhost:8080/categorias');
+        const lista = await categorias.json();
+
+        lista.forEach(cat => {
+            const option = document.createElement('option');
+            option.value = cat.id;
+            option.text = cat.nomeCat;
+            if (cat.id === produto.categoriaId) {
+                option.selected = true;
+            }
+            select.appendChild(option);
         });
 
-        if (response.ok) {
-            alert('Produto atualizado com sucesso!');
-            window.location.href = '/produtos'; // Redireciona para a lista de produtos
-        } else {
-            throw new Error('Erro ao atualizar produto');
-        }
     } catch (error) {
+        console.error("Erro ao carregar produto:", error);
         document.getElementById('errorMessage').style.display = 'block';
-        document.getElementById('errorText').textContent = 'Erro ao atualizar produto. Tente novamente.';
+        document.getElementById('errorText').textContent = 'Erro ao carregar dados. Tente novamente.';
     }
 });

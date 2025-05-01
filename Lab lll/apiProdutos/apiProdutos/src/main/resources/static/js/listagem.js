@@ -35,14 +35,15 @@ function carregarProdutos() {
         .then(response => response.json())
         .then(data => {
             const produtosContainer = document.getElementById("produtos-lista");
+            console.log(data)
             produtosContainer.innerHTML = ''; // Limpar a tabela antes de adicionar novos produtos
             data.forEach(produto => {
                 const row = `<tr>
                     <td>${produto.nome}</td>
                     <td>${produto.preco}</td>
                     <td>${produto.disponivel ? 'Sim' : 'Não'}</td>
-                    <td>${produto.categoriaId}</td>
-                    <td><a href="/editar_prod/${produto.id}" class="btn btn-warning">Editar</a></td>
+                    <td>${produto.categoriaNome}</td>
+                    <td><a href="editar_prod/${produto.id}" class="btn btn-warning">Editar</a></td>
                     <td><a href="/listagem/excluir/${produto.id}" class="btn btn-danger">Excluir</a></td>
                 </tr>`;
                 produtosContainer.innerHTML += row;

@@ -1,6 +1,7 @@
 package com.fatec.apiProdutos.services;
 
 import com.fatec.apiProdutos.Dto.ProdutoDto;
+import com.fatec.apiProdutos.Dto.ProdutoListagemDto;
 import com.fatec.apiProdutos.entities.Categoria;
 import com.fatec.apiProdutos.entities.FiltroOpcao;
 import com.fatec.apiProdutos.entities.Produto;
@@ -46,7 +47,7 @@ public class ProdutoService {
         return converteEmDto(prod);
     }
 
-    public List<ProdutoDto> filtrarProdutos(FiltroOpcao opcao, String dropDisp, Long categoriaId) {
+    public List<ProdutoListagemDto> filtrarProdutos(FiltroOpcao opcao, String dropDisp, Long categoriaId) {
         List<Produto> produtos;
 
 
@@ -73,7 +74,7 @@ public class ProdutoService {
         }
 
         return produtos.stream()
-                .map(this::converteEmDto)
+                .map(this::converteParaDto)
                 .collect(Collectors.toList());
     }
 
@@ -92,7 +93,7 @@ public class ProdutoService {
     }
 
     @Transactional
-    public Produto atualizar(Long id, Produto produto) {
+    public ProdutoDto atualizar(Long id, Produto produto) {
         Produto prod = produtoRepository.findById(id).get();
 
 
@@ -101,7 +102,8 @@ public class ProdutoService {
         prod.setPreco(produto.getPreco());
         prod.setDisponivel(produto.isDisponivel());
         produtoRepository.save(prod);
-        return prod;
+
+        return converteEmDto(prod);
     }
 
     @Transactional
@@ -118,6 +120,17 @@ public class ProdutoService {
                 produto.getPreco(),
                 produto.isDisponivel(),
                 produto.getCategoria().getId()
+        );
+    }
+
+    private ProdutoListagemDto converteParaDto(Produto produto){
+        return new ProdutoListagemDto(
+                produto.getId(),
+                produto.getNomeProd(),
+                produto.getDescricao(),
+                produto.getPreco(),
+                produto.isDisponivel(),
+                produto.getCategoria().getNomeCat()
         );
     }
 }
