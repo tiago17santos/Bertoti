@@ -35,7 +35,7 @@ function carregarProdutos() {
         .then(response => response.json())
         .then(data => {
             const produtosContainer = document.getElementById("produtos-lista");
-            console.log(data)
+
             produtosContainer.innerHTML = ''; // Limpar a tabela antes de adicionar novos produtos
             data.forEach(produto => {
                 const row = `<tr>

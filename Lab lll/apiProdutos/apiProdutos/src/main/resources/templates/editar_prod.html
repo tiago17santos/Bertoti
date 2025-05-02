@@ -39,9 +39,9 @@
     <div class="form-container col-md-8">
         <h2 class="text-center mb-4">Edição de Produtos</h2>
 
-        <form id="editProductForm" action="http://localhost:8080/produtos/editar_prod/${id}" method="POST">
-            <!-- CSRF Token (Se necessário) -->
-            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        <form id="editProductForm">
+            <!-- CSRF Token (Se necessário)
+            <input type="hidden" name="_csrf" value="{{csrfToken}}"> -->
 
             <div class="mb-3">
                 <label for="nomeProduto" class="form-label">Nome do Produto</label>
