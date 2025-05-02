@@ -52,37 +52,12 @@ public class ProdutoController {
         return ResponseEntity.ok().body(produtos);
     }
 
-
-    @GetMapping("/listagem")
-    public String listarProdutos(@RequestParam(value = "opcao", required = false) FiltroOpcao opcao,
-                                        @RequestParam(value = "drop_disp", required = false) String dropDisp,
-                                        @RequestParam(value = "drop_cat", required = false) Long categoriaId,
-                                        Model model) {
-
-        List<ProdutoListagemDto> produtos = produtoService.filtrarProdutos(opcao, dropDisp, categoriaId);
-        System.out.println("Tamanho da lista de produtos: " + produtos.size());
-        List<CategoriaDto> categorias = categoriaService.listarTodas();
-
-        logger.info("Produtos: {}", produtos);
-        logger.info("Categorias: {}", categorias);
-
-        model.addAttribute("listagem", produtos);
-        model.addAttribute("categorias", categorias);
-        model.addAttribute("opcao", opcao);
-
-        return "listagem";
-    }
-
     @GetMapping("/filtrar")
     public ResponseEntity<List<ProdutoListagemDto>> filtrarProdutos(
-            @RequestParam(value = "opcao", required = false) FiltroOpcao opcao,
             @RequestParam(value = "drop_disp", required = false) String dropDisp,
             @RequestParam(value = "drop_cat", required = false) Long categoriaId) {
 
-        List<ProdutoListagemDto> produtos = produtoService.filtrarProdutos(opcao, dropDisp, categoriaId);
-        for (ProdutoListagemDto produto : produtos) {
-            System.out.println(produto);
-        }
+        List<ProdutoListagemDto> produtos = produtoService.filtrarProdutos(dropDisp, categoriaId);
         return ResponseEntity.ok().body(produtos);
     }
 

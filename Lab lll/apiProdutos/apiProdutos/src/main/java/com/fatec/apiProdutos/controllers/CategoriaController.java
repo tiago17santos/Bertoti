@@ -1,7 +1,6 @@
 package com.fatec.apiProdutos.controllers;
 
 import com.fatec.apiProdutos.Dto.CategoriaDto;
-import com.fatec.apiProdutos.entities.Categoria;
 import com.fatec.apiProdutos.services.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

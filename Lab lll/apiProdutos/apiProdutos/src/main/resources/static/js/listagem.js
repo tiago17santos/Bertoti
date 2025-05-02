@@ -4,6 +4,7 @@ const drop_disp = document.getElementById('drop_disp');
 const drop_cat = document.getElementById('drop_cat');
 const opcao = document.querySelector('input[name="opcao"]:checked');
 
+
 window.onload = function() {
     carregarProdutos();
     carregarCategorias();
@@ -69,9 +70,6 @@ function carregarCategorias() {
             console.error('Erro ao carregar categorias:', error);
         });
 }
-
-
-
 
 // Botão de filtrar
 document.getElementById('btn-filtrar').addEventListener('click', function() {

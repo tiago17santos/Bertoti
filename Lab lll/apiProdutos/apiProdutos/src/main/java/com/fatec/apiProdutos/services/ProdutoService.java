@@ -3,7 +3,6 @@ package com.fatec.apiProdutos.services;
 import com.fatec.apiProdutos.Dto.ProdutoDto;
 import com.fatec.apiProdutos.Dto.ProdutoListagemDto;
 import com.fatec.apiProdutos.entities.Categoria;
-import com.fatec.apiProdutos.entities.FiltroOpcao;
 import com.fatec.apiProdutos.entities.Produto;
 import com.fatec.apiProdutos.repositories.CategoriaRepository;
 import com.fatec.apiProdutos.repositories.ProdutoRepository;
@@ -13,7 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -47,28 +45,20 @@ public class ProdutoService {
         return converteEmDto(prod);
     }
 
-    public List<ProdutoListagemDto> filtrarProdutos(FiltroOpcao opcao, String dropDisp, Long categoriaId) {
+    public List<ProdutoListagemDto> filtrarProdutos( String dropDisp, Long categoriaId) {
         List<Produto> produtos;
 
+        boolean temFiltroDisponivel = dropDisp != null && !dropDisp.isBlank();
+        boolean temFiltroCategoria = categoriaId != null;
 
-        if (opcao != null) {
-            switch (opcao) {
-                case Disponivel:
-                    boolean disponivel = "sim".equalsIgnoreCase(dropDisp);
-                    produtos = produtoRepository.findByDisponivel(disponivel);
-                    System.out.println(dropDisp);
-                    break;
-                case Categoria:
-                    if (categoriaId != null) {
-                        produtos = produtoRepository.findCategoriaById(categoriaId);
-                    } else {
-                        produtos = produtoRepository.findAll(); // Se categoriaId for nulo, retorna todos
-                    }
-                    break;
-                default:
-                    produtos = produtoRepository.findAll();
-                    break;
-            }
+        if (temFiltroDisponivel && temFiltroCategoria) {
+            boolean disponivel = "sim".equalsIgnoreCase(dropDisp);
+            produtos = produtoRepository.findByDisponivelAndCategoriaId(disponivel, categoriaId);
+        } else if (temFiltroDisponivel) {
+            boolean disponivel = "sim".equalsIgnoreCase(dropDisp);
+            produtos = produtoRepository.findByDisponivel(disponivel);
+        } else if (temFiltroCategoria) {
+            produtos = produtoRepository.findAllByCategoriaId(categoriaId);
         } else {
             produtos = produtoRepository.findAll();
         }
@@ -77,7 +67,6 @@ public class ProdutoService {
                 .map(this::converteParaDto)
                 .collect(Collectors.toList());
     }
-
 
 
     @Transactional
