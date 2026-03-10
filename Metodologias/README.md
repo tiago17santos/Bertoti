@@ -31,6 +31,65 @@ Estou sempre em busca de melhorar minhas habilidades técnicas e de me adaptar �
 
 ## Meus Projetos
 
+**Em 2024-1**
+
+O projeto desenvolvido pela equipe CyberNexus, onde atuei como Dev e Scrum Master, consistiu em uma Calculadora Científica, uma aplicação de linha de comando focada em oferecer operações matemáticas e de conversão numérica de forma prática e acessível. A plataforma oferece operações básicas, cálculo de fatorial, equação de segundo grau, conversão entre bases numéricas, concatenação de strings e cálculo de juros, tudo desenvolvido com foco em lógica de programação e aprendizado colaborativo.
+
+O projeto foi proposto pela FATEC como Projeto Integrador do 1º semestre, com o objetivo de exercitar a capacidade de pesquisa e autodidaxia dos integrantes, aplicando técnicas de programação na construção de algoritmos e no uso de ferramentas de desenvolvimento integrado.
+
+O principal problema identificado foi a necessidade de consolidar os conhecimentos introdutórios de programação em uma solução funcional e completa, integrando múltiplas operações em um único sistema com menu interativo. A ausência de experiência prévia com versionamento e trabalho em equipe também representou um desafio a ser superado ao longo das sprints.
+
+A solução entregue foi uma calculadora científica desenvolvida em duas etapas: primeiro com pseudocódigo em VisualG (Portugol), para consolidar a lógica dos algoritmos, e depois reimplementada em TypeScript, tornando o código mais robusto e tipado. O sistema conta com um menu interativo que permite ao usuário executar múltiplas operações em sequência, cobrindo desde operações aritméticas básicas até conversões entre bases numéricas e cálculos financeiros.
+
+**Tecnologias Utilizadas**
+
+VisualG (Portugol) – utilizado na fase inicial do projeto para desenvolvimento e validação dos algoritmos em pseudocódigo, facilitando o entendimento da lógica antes da implementação em linguagem de programação real.
+
+TypeScript – linguagem principal da implementação final, proporcionando tipagem estática e organização do código na construção dos módulos da calculadora.
+
+JavaScript – gerado a partir da compilação do TypeScript, utilizado na execução dos módulos no ambiente Node.js.
+
+Microsoft Excel – utilizado na fase de prototipação e validação das fórmulas de conversão numérica, permitindo testar os resultados antes da implementação no código.
+
+Git/GitHub – controle de versão e colaboração entre os membros da equipe, com organização por sprints e backlog documentado no repositório.
+
+**Contribuições Pessoais**
+
+Implementação do algoritmo de conversão entre bases numéricas binário e octal (e vice-versa) em VisualG, desenvolvendo a lógica de conversão passo a passo em pseudocódigo antes de qualquer implementação em linguagem de programação.
+
+Prototipação das fórmulas de conversão binário-octal e octal-binário no Excel, validando os resultados esperados e utilizando a planilha como ferramenta de testes antes da codificação.
+
+Reimplementação das mesmas conversões em TypeScript, traduzindo a lógica já validada para código tipado e integrando os módulos ao menu interativo da calculadora.
+
+**Hard Skills**
+
+VisualG / Portugol – desenvolvimento de algoritmos com estruturas de controle, repetição e manipulação de variáveis.
+
+TypeScript – implementação de funções tipadas e organização modular do código.
+
+Lógica de conversão de bases numéricas – domínio das regras de conversão entre sistemas binário, octal, decimal e hexadecimal.
+
+Excel – uso de fórmulas para prototipação e validação de lógica matemática antes da implementação.
+
+Git/GitHub – versionamento de código e colaboração em repositório compartilhado.
+
+**Soft Skills**
+
+Autodidaxia – busquei referências e aprendi por conta própria as regras de conversão entre bases numéricas para implementar corretamente os algoritmos.
+
+Atenção aos Detalhes – a conversão entre bases exige precisão nos cálculos, o que me fez desenvolver o hábito de validar os resultados em diferentes ferramentas antes de considerar a entrega completa.
+
+Trabalho em Equipe – colaborei com os demais desenvolvedores integrando meus módulos ao sistema unificado da calculadora, respeitando os contratos definidos pelo menu principal.
+
+Organização – segui o fluxo das sprints e entregas, garantindo que minhas implementações estivessem prontas dentro dos prazos estabelecidos pelo time.
+
+Liderança / Facilitação – atuei como Scrum Master do time, facilitando as cerimônias ágeis (planning, review e retrospectiva), removendo impedimentos e garantindo que o fluxo de entregas seguisse o ritmo das sprints.
+
+Gestão do Tempo – organizei o backlog e as prioridades junto ao Product Owner, distribuindo as tarefas entre os membros e acompanhando o progresso dentro dos prazos de cada sprint.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 ### Em 2025-1
 O projeto desenvolvido pela equipe VORTEK consistiu no Sistema de Ponto, uma aplicação web focada no controle de jornada de trabalho de colaboradores de empresas terceirizadas. A plataforma oferece cadastro de empresas e profissionais, registro de ponto, geração de relatórios, dashboards com filtragem por data e extração de dados, tudo com usabilidade e segurança em mente
 
