@@ -33,7 +33,7 @@ Estou sempre em busca de melhorar minhas habilidades técnicas e de me adaptar �
 
 **Em 2024-1**
 
-O projeto desenvolvido pela equipe CyberNexus, onde atuei como Dev e Scrum Master, consistiu em uma Calculadora Científica, uma aplicação de linha de comando focada em oferecer operações matemáticas e de conversão numérica de forma prática e acessível. A plataforma oferece operações básicas, cálculo de fatorial, equação de segundo grau, conversão entre bases numéricas, concatenação de strings e cálculo de juros, tudo desenvolvido com foco em lógica de programação e aprendizado colaborativo.
+O projeto desenvolvido pela equipe CyberNexus, consistiu em uma Calculadora Científica, uma aplicação de linha de comando focada em oferecer operações matemáticas e de conversão numérica de forma prática e acessível. A plataforma oferece operações básicas, cálculo de fatorial, equação de segundo grau, conversão entre bases numéricas, concatenação de strings e cálculo de juros, tudo desenvolvido com foco em lógica de programação e aprendizado colaborativo.
 
 O projeto foi proposto pela FATEC como Projeto Integrador do 1º semestre, com o objetivo de exercitar a capacidade de pesquisa e autodidaxia dos integrantes, aplicando técnicas de programação na construção de algoritmos e no uso de ferramentas de desenvolvimento integrado.
 
@@ -83,12 +83,73 @@ Trabalho em Equipe – colaborei com os demais desenvolvedores integrando meus m
 
 Organização – segui o fluxo das sprints e entregas, garantindo que minhas implementações estivessem prontas dentro dos prazos estabelecidos pelo time.
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**Em 2024-2**
+
+O projeto desenvolvido pela equipe CyberNexusonde, atuei como Dev e Scrum Master, consistiu no PACER, um sistema desktop de avaliação de desempenho de alunos em projetos por sprints. A plataforma oferece ambientes distintos para professores e alunos, com funcionalidades de cadastro de turmas, grupos e critérios de avaliação, registro de pontuações por sprint, geração de relatórios CSV e controle de acesso por perfil de usuário.
+
+O projeto foi proposto pela FATEC como Projeto Integrador do 2º semestre, com o objetivo de consolidar o aprendizado em programação orientada a objetos, modelagem de banco de dados e desenvolvimento de interfaces desktop com Java e JavaFX.
+
+O principal problema identificado foi a ausência de uma ferramenta padronizada para que professores pudessem gerenciar avaliações de grupos ao longo de sprints, com critérios customizáveis e histórico de pontuações acessível tanto para docentes quanto para alunos. O processo manual dificultava o acompanhamento do desempenho e a geração de relatórios confiáveis.
+
+A solução entregue foi uma aplicação desktop desenvolvida inteiramente em Java, utilizando JavaFX para a interface gráfica e MySQL como banco de dados relacional. O sistema conta com telas para login, cadastro de turmas, gerenciamento de alunos e grupos, atribuição de pontuações por critério e sprint, geração de relatórios e um histórico de avaliações acessível por perfil. O projeto foi distribuído como arquivo executável `.jar`, garantindo facilidade de instalação e uso.
+
+**Tecnologias Utilizadas**
+
+Java – linguagem principal utilizada tanto na lógica de negócio quanto na estrutura do projeto, com programação orientada a objetos aplicada em todas as camadas da aplicação.
+
+JavaFX – framework utilizado para o desenvolvimento das interfaces gráficas desktop, permitindo a criação de telas interativas, modais e componentes visuais reutilizáveis.
+
+MySQL – banco de dados relacional utilizado para persistência de dados como usuários, turmas, grupos, critérios de avaliação e pontuações por sprint.
+
+Scene Builder – ferramenta auxiliar para a prototipação e construção visual dos layouts FXML utilizados pelo JavaFX.
+
+Git/GitHub – controle de versão e colaboração entre os membros da equipe, com organização por branches de sprint.
+
+Figma – utilizado na prototipação das telas antes da implementação no JavaFX.
+
+**Contribuições Pessoais**
+
+Participação ativa na construção do backend em Java, implementando lógicas de negócio como controle de datas válidas para sprints, bloqueio de critérios após o encerramento da primeira sprint, impedimento de pontuações negativas e lógica de inativação de botões de sprint conforme o andamento do projeto.
+
+Desenvolvimento de telas e componentes visuais com JavaFX, contribuindo com layouts de telas, ajustes de interface e criação de elementos como dropdowns e barras de rolagem em listagens de critérios e sprints.
+
+Geração do executável `.jar` do projeto, configurando o empacotamento da aplicação para distribuição e garantindo que todas as dependências estivessem corretamente incluídas no artefato final.
+
+Elaboração da modelagem do banco de dados, participando da definição da estrutura das tabelas, relacionamentos entre entidades e criação dos diagramas MER (Modelo Entidade-Relacionamento) documentados no repositório.
+
+**Hard Skills**
+
+Java – desenvolvimento orientado a objetos com implementação de lógicas de negócio, validações e controle de fluxo da aplicação.
+
+JavaFX – construção de interfaces desktop com componentes visuais, navegação entre telas e integração com a camada de dados.
+
+MySQL – modelagem relacional, definição de estrutura de tabelas e relacionamentos entre entidades.
+
+Empacotamento Java (.jar) – configuração e geração de executáveis para distribuição da aplicação desktop.
+
+Diagramação MER – elaboração de diagramas de banco de dados para documentação técnica do projeto.
+
+Git/GitHub – versionamento por branches de sprint e colaboração em repositório compartilhado.
+
+**Soft Skills**
+
+Visão sistêmica – ao atuar no backend, frontend e banco de dados, desenvolvi a capacidade de entender o impacto de cada camada sobre as demais, tomando decisões mais conscientes durante o desenvolvimento.
+
+Atenção aos Detalhes – lógicas como bloqueio de critérios após a primeira sprint e impedimento de pontuações negativas exigiram precisão na implementação para evitar comportamentos inesperados.
+
+Proatividade – assumi a responsabilidade pela geração do executável do projeto, garantindo que a entrega final pudesse ser instalada e utilizada sem dependências externas.
+
+Trabalho em Equipe – colaborei com os demais desenvolvedores integrando as partes do sistema, alinhando a estrutura do banco com as necessidades do backend e das telas.
+
+Organização – acompanhei o backlog das sprints e contribuí com entregas dentro dos prazos, mantendo a rastreabilidade das tarefas no repositório.
+
 Liderança / Facilitação – atuei como Scrum Master do time, facilitando as cerimônias ágeis (planning, review e retrospectiva), removendo impedimentos e garantindo que o fluxo de entregas seguisse o ritmo das sprints.
 
 Gestão do Tempo – organizei o backlog e as prioridades junto ao Product Owner, distribuindo as tarefas entre os membros e acompanhando o progresso dentro dos prazos de cada sprint.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 
 ### Em 2025-1
 O projeto desenvolvido pela equipe VORTEK consistiu no Sistema de Ponto, uma aplicação web focada no controle de jornada de trabalho de colaboradores de empresas terceirizadas. A plataforma oferece cadastro de empresas e profissionais, registro de ponto, geração de relatórios, dashboards com filtragem por data e extração de dados, tudo com usabilidade e segurança em mente
