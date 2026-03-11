@@ -221,3 +221,69 @@ Trabalho em Equipe – cooperei com os desenvolvedores frontend e backend, ajust
 Gestão do Tempo – organizei minhas entregas dentro das sprints planejadas, priorizando funcionalidades críticas.
 
 Resiliência / Resolução de Problemas – superei desafios técnicos como erros de CORS, inconsistências nos dados e formatação de relatórios.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**Em 2025-2**
+
+O projeto desenvolvido pela equipe VORTEK consistiu em um sistema web de monitoramento de tráfego da cidade de São José dos Campos, com foco na análise de dados coletados pelos radares de trânsito da cidade. A plataforma oferece dashboards interativos, mapas georreferenciados, alertas automáticos e visualizações em tempo real dos indicadores de tráfego, permitindo que gestores acompanhem o fluxo viário e tomem decisões rápidas e embasadas em dados.
+
+O projeto foi proposto como Projeto Integrador do 5º semestre da FATEC, com o objetivo de desenvolver uma solução completa de análise e visualização de dados de tráfego urbano, integrando fontes de dados reais coletados por radares instalados na cidade.
+
+O principal problema identificado foi a dificuldade de monitorar e interpretar em tempo hábil o grande volume de dados gerados pelos radares de trânsito, que até então não tinham uma plataforma centralizada para visualização e análise. A ausência de dashboards e alertas automáticos dificultava a identificação de pontos críticos e a tomada de decisão por parte dos gestores.
+
+A solução entregue foi um sistema web completo com frontend em Vue.js e Nuxt.js, oferecendo interface responsiva com dashboards dinâmicos, tela de login com controle de acesso e mapas georreferenciados. O backend, desenvolvido em Java com Spring Boot, fornece uma API REST responsável pelo processamento e disponibilização dos dados coletados pelos radares, com endpoints para consulta, filtragem e integração dos dados de tráfego. O banco de dados foi populado via scripts dedicados, garantindo consistência e volume de dados suficiente para os testes e demonstrações do sistema.
+
+**Tecnologias Utilizadas**
+
+Java / Spring Boot – utilizados na construção da API REST do backend, garantindo robustez no processamento e disponibilização dos dados dos radares de tráfego.
+
+Vue.js / Nuxt.js – framework principal do frontend, proporcionando uma interface moderna, responsiva e de fácil manutenção, com suporte a renderização server-side.
+
+TypeScript – base do desenvolvimento frontend, garantindo tipagem estável e organização do código nos componentes Vue.
+
+Tailwind CSS – utilizado na estilização das telas, garantindo consistência visual e responsividade na interface.
+
+Banco de dados relacional – responsável pela persistência dos dados de tráfego, indicadores e configurações do sistema.
+
+Git/GitHub – controle de versão e colaboração entre os membros da equipe, com organização por branches e sprints.
+
+**Contribuições Pessoais**
+
+Desenvolvimento de endpoints REST no backend em Java, implementando operações de consulta e filtragem dos dados coletados pelos radares, permitindo que o frontend consumisse as informações de forma estruturada e eficiente.
+
+Implementação de lógicas de negócio no backend, como tratamento e normalização dos dados brutos dos radares, regras de filtragem por período, localização e indicadores de tráfego.
+
+Integração com os dados dos radares de trânsito, participando da construção dos mecanismos de ingestão e processamento das informações coletadas pelos equipamentos da cidade.
+
+Criação de scripts para popular o banco de dados, garantindo volume e variedade de dados suficientes para os testes das funcionalidades e demonstrações do sistema durante as sprints.
+
+Desenvolvimento da tela de login no frontend em Vue.js, implementando o fluxo de autenticação e redirecionamento conforme o perfil de acesso do usuário.
+
+Desenvolvimento de dashboards interativos no frontend, construindo componentes de visualização de dados com gráficos e indicadores dinâmicos integrados à API do backend.
+
+**Hard Skills**
+
+Java / Spring Boot – desenvolvimento de APIs REST com endpoints de consulta, filtragem e integração com fontes de dados externas.
+
+Vue.js / Nuxt.js – construção de interfaces web modernas com componentes reativos, dashboards e controle de autenticação.
+
+TypeScript – tipagem estática e organização do código no desenvolvimento frontend.
+
+Integração de dados – processamento e normalização de dados brutos provenientes de equipamentos de monitoramento de tráfego.
+
+Scripts de banco de dados – criação de scripts SQL para população e preparação do ambiente de dados.
+
+Git/GitHub – versionamento colaborativo e organização do projeto por sprints.
+
+**Soft Skills**
+
+Versatilidade – atuei tanto no backend quanto no frontend, adaptando meu foco conforme a necessidade de cada sprint e contribuindo em diferentes camadas do sistema.
+
+Visão de Produto – ao trabalhar na integração dos dados dos radares e na visualização via dashboards, desenvolvi uma compreensão ampla do fluxo completo dos dados, desde a coleta até a apresentação ao usuário.
+
+Atenção aos Detalhes – o tratamento de dados brutos de radares exige cuidado na normalização e consistência das informações antes de disponibilizá-las para consumo pelo frontend.
+
+Trabalho em Equipe – colaborei com os demais desenvolvedores alinhando contratos de API, estrutura de dados e integrações entre as camadas do sistema.
+
+Proatividade – assumi a responsabilidade pela criação dos scripts de banco de dados, garantindo que o ambiente estivesse pronto para os testes e entregas de cada sprint.
