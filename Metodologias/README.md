@@ -63,15 +63,15 @@ Reimplementação das mesmas conversões em TypeScript, traduzindo a lógica já
 
 **Hard Skills**
 
-VisualG / Portugol – desenvolvimento de algoritmos com estruturas de controle, repetição e manipulação de variáveis.
+VisualG / Portugol – utilizei para o desenvolvimento de algoritmos com estruturas de controle, repetição e manipulação de variáveis.
 
-TypeScript – implementação de funções tipadas e organização modular do código.
+TypeScript – utilizado na implementação de funções tipadas e organização modular do código, permitindo mais legibilidade.
 
 Lógica de conversão de bases numéricas – domínio das regras de conversão entre sistemas binário, octal, decimal e hexadecimal.
 
 Excel – uso de fórmulas para prototipação e validação de lógica matemática antes da implementação.
 
-Git/GitHub – versionamento de código e colaboração em repositório compartilhado.
+Git/GitHub – realizamos o versionamento de código e colaboração em repositório compartilhado para melhor controle.
 
 **Soft Skills**
 
@@ -121,9 +121,9 @@ Elaboração da modelagem do banco de dados, participando da definição da estr
 
 **Hard Skills**
 
-Java – desenvolvimento orientado a objetos com implementação de lógicas de negócio, validações e controle de fluxo da aplicação.
+Java – utilizei para desenvolvimento orientado a objetos com implementação de lógicas de negócio, validações e controle de fluxo da aplicação.
 
-JavaFX – construção de interfaces desktop com componentes visuais, navegação entre telas e integração com a camada de dados.
+JavaFX – escolhido para realizarmos a construção de interfaces desktop com componentes visuais, navegação entre telas e integração com a camada de dados.
 
 MySQL – modelagem relacional, definição de estrutura de tabelas e relacionamentos entre entidades.
 
@@ -131,7 +131,7 @@ Empacotamento Java (.jar) – configuração e geração de executáveis para di
 
 Diagramação MER – elaboração de diagramas de banco de dados para documentação técnica do projeto.
 
-Git/GitHub – versionamento por branches de sprint e colaboração em repositório compartilhado.
+Git/GitHub – realizamos o versionamento de código e colaboração em repositório compartilhado para melhor controle.
 
 **Soft Skills**
 
@@ -201,17 +201,23 @@ Testes de fluxo e interface, usando ferramentas como Postman ou testes unitário
 Documentação técnica no repositório docs, detalhando endpoints, modelos de dados e instruções de instalação.
 
 #### Hard Skills
-Java – proficiência em programação orientada a objetos e construção de APIs REST.
+Java – desenvolvimento de APIs REST com implementação de regras de negócio, autenticação de usuários e gerenciamento de registros de ponto.
 
-Spring Boot – criação de serviços rápidos e escaláveis (se utilizado).
+Spring Boot – criação e estruturação de endpoints REST, organização da camada de serviços e integração com banco de dados relacional.
 
-TypeScript / Angular – desenvolvimento web com tipagem forte, componentes e interatividade.
+TypeScript / Angular – desenvolvimento de interfaces web interativas com componentes reutilizáveis, filtros dinâmicos e integração com APIs.
 
-Banco de dados relacional – modelagem, consultas e integração com backend.
+Banco de dados relacional – modelagem de entidades e relacionamentos para gerenciamento de empresas, profissionais e registros de jornada, garantindo integridade dos dados.
 
-Git/GitHub – versionamento colaborativo e organização de repositórios.
+Git/GitHub – realizamos o versionamento de código e colaboração em repositório compartilhado para melhor controle durante as sprints.
 
-APIs REST – definição, testes e integração entre frontend e backend.
+APIs REST – definição, implementação e consumo de endpoints para comunicação entre frontend e backend.
+
+Dashboards e Visualização de Dados – construção de gráficos dinâmicos e filtros interativos para análise de jornadas e relatórios gerenciais.
+
+Exportação de Relatórios – implementação de funcionalidades para geração e exportação de dados em PDF e Excel.
+ 
+Documentação Técnica – elaboração de documentação de endpoints, estrutura de dados e instruções de instalação para manutenção do sistema.
 
 #### Soft Skills
 Comunicação – facilitei a comunicação entre membros da equipe, especialmente nas revisões de código e sprints.
@@ -221,6 +227,8 @@ Trabalho em Equipe – cooperei com os desenvolvedores frontend e backend, ajust
 Gestão do Tempo – organizei minhas entregas dentro das sprints planejadas, priorizando funcionalidades críticas.
 
 Resiliência / Resolução de Problemas – superei desafios técnicos como erros de CORS, inconsistências nos dados e formatação de relatórios.
+
+Adaptabilidade – atuação em diferentes camadas da aplicação, contribuindo tanto no backend quanto no frontend e banco de dados.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -264,17 +272,21 @@ Desenvolvimento de dashboards interativos no frontend, construindo componentes d
 
 **Hard Skills**
 
-Java / Spring Boot – desenvolvimento de APIs REST com endpoints de consulta, filtragem e integração com fontes de dados externas.
+Java / Spring Boot – desenvolvimento de APIs REST para consulta, filtragem e processamento de dados de tráfego provenientes de radares urbanos.
 
-Vue.js / Nuxt.js – construção de interfaces web modernas com componentes reativos, dashboards e controle de autenticação.
+Vue.js / Nuxt.js – construção de interfaces web responsivas com dashboards interativos, autenticação de usuários e visualização dinâmica de indicadores.
 
-TypeScript – tipagem estática e organização do código no desenvolvimento frontend.
+TypeScript – organização e tipagem do código frontend para criação de componentes reutilizáveis e integração segura com APIs.
 
-Integração de dados – processamento e normalização de dados brutos provenientes de equipamentos de monitoramento de tráfego.
+Integração de dados – tratamento, normalização e disponibilização de dados brutos coletados por radares de trânsito para consumo analítico.
 
-Scripts de banco de dados – criação de scripts SQL para população e preparação do ambiente de dados.
+Dashboards e Visualização de Dados – desenvolvimento de gráficos, indicadores e componentes interativos para monitoramento em tempo real do tráfego urbano.
 
-Git/GitHub – versionamento colaborativo e organização do projeto por sprints.
+Banco de Dados Relacional – estruturação e preparação de dados para persistência de informações de tráfego, indicadores e consultas históricas.
+
+Scripts SQL – criação de scripts para população e preparação do ambiente de banco de dados utilizado em testes e demonstrações do sistema.
+
+Git/GitHub – gerenciamento de versionamento, integração de funcionalidades e colaboração em equipe durante as sprints.
 
 **Soft Skills**
 
